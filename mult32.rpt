@@ -1,0 +1,560 @@
+***********************************
+Register inference from elaboration  
+***********************************
+Inferred memory devices in process
+        in routine multn_seq line 43 in file
+                './HDL/RTL/multn_seq_rtl_v2.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    state_reg_reg    | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine multn_seq line 75 in file
+                './HDL/RTL/multn_seq_rtl_v2.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    opa_r_reg_reg    | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    count_reg_reg    | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    mres_reg_reg     | Flip-flop |  67   |  Y  | N  | Y  | N  | N  | N  | N  |
+=============================================================================== 
+
+
+****************************************
+Report : area
+Design : multn_seq
+Version: J-2014.09-SP5
+Date   : Wed Nov 29 19:07:59 2017
+****************************************
+
+Library(s) Used:
+
+    fsd0a_a_generic_core_ss0p9v125c (File: /dkits/fday/90nm/std_process/core_rvt/2011Q2v2.2/GENERIC_CORE_1D0V/FrontEnd/synopsys/synthesis/fsd0a_a_generic_core_ss0p9v125c.db)
+
+Number of ports:                          132
+Number of nets:                           629
+Number of cells:                          430
+Number of combinational cells:            321
+Number of sequential cells:               106
+Number of macros/black boxes:               0
+Number of buf/inv:                         89
+Number of references:                      87
+
+Combinational area:               6142.640014
+Buf/Inv area:                     1161.887990
+Noncombinational area:            1739.696019
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                  7882.336033
+Total area:                 undefined
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area          Local cell area
+                                  ------------------  ---------------------------- 
+Hierarchical cell                 Absolute   Percent  Combi-     Noncombi-  Black-
+                                  Total      Total    national   national   boxes   Design
+--------------------------------  ---------  -------  ---------  ---------  ------  --------------------
+multn_seq                         7882.3360    100.0  2112.8800  1739.6960  0.0000  multn_seq
+add_126                           2083.8720     26.4  2083.8720     0.0000  0.0000  multn_seq_DW01_add_4
+sub_118                           1033.3120     13.1  1033.3120     0.0000  0.0000  multn_seq_DW01_sub_3
+sub_118_2                          912.5760     11.6   912.5760     0.0000  0.0000  multn_seq_DW01_sub_2
+--------------------------------  ---------  -------  ---------  ---------  ------  --------------------
+Total                                                 6142.6400  1739.6960  0.0000
+
+
+Area of detected synthetic parts
+--------------------------------
+                                      Perc. of
+  Module   Implem.  Count       Area cell area
+  -------- -------  ----- ---------- ---------
+  DW01_add  pparch      1  2083.8721     26.4%
+  DW01_sub  pparch      2  1945.8873     24.7%
+  -------- -------  ----- ---------- ---------
+  Total:                3  4029.7593     51.1%
+
+Estimated area of ungrouped synthetic parts
+-------------------------------------------
+                           Estimated  Perc. of
+  Module   Implem.  Count       Area cell area
+  -------- -------  ----- ---------- ---------
+  DW01_inc     rpl      1    52.5280      0.7%
+  DW_cmp   apparch      1     2.3520      0.0%
+  -------- -------  ----- ---------- ---------
+  Total:                2    54.8800      0.7%
+
+Total synthetic cell area:              4084.6393  51.8%  (estimated)
+
+1
+
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : multn_seq
+Version: J-2014.09-SP5
+Date   : Sun Dec  3 16:07:42 2017
+****************************************
+
+Operating Conditions: WCCOM   Library: fsd0a_a_generic_core_ss0p9v125c
+Wire Load Model Mode: top
+
+  Startpoint: opa_r_reg_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: mres_reg_reg[57]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  multn_seq          enG5K                 fsd0a_a_generic_core_ss0p9v125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                  0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  opa_r_reg_reg[0]/CK (QDFERBX3)                         0.000      0.000 r
+  opa_r_reg_reg[0]/Q (QDFERBX3)                          0.180      0.180 f
+  sub_116/B[1] (multn_seq_DW01_sub_3)                    0.000      0.180 f
+  sub_116/U275/O (INVCKX8)                               0.031      0.211 r
+  sub_116/U301/O (ND2X6)                                 0.030      0.241 f
+  sub_116/U302/O (NR2X6)                                 0.061      0.302 r
+  sub_116/U297/O (ND2X6)                                 0.048      0.351 f
+  sub_116/U296/O (NR2X6)                                 0.072      0.422 r
+  sub_116/U252/O (BUFX8)                                 0.070      0.493 r
+  sub_116/U255/O (ND2X2)                                 0.039      0.532 f
+  sub_116/U186/O (XNR2X2)                                0.063      0.594 f
+  sub_116/DIFF[24] (multn_seq_DW01_sub_3)                0.000      0.594 f
+  U336/O (MAOI1X2)                                       0.070      0.664 r
+  U426/O (OAI112X2)                                      0.099      0.764 f
+  add_124/B[57] (multn_seq_DW01_add_4)                   0.000      0.764 f
+  add_124/U385/O (NR2X6)                                 0.069      0.832 r
+  add_124/U494/O (NR2X3)                                 0.039      0.871 f
+  add_124/U760/O (AOI12X2)                               0.079      0.950 r
+  add_124/U780/O (OAI12X2)                               0.060      1.010 f
+  add_124/U564/O (INVX4)                                 0.042      1.052 r
+  add_124/U511/O (INVX4)                                 0.025      1.078 f
+  add_124/U516/O (AOI12X2)                               0.061      1.138 r
+  add_124/U527/O (OAI12X2)                               0.055      1.193 f
+  add_124/U478/O (XNR2X2)                                0.063      1.256 f
+  add_124/SUM[59] (multn_seq_DW01_add_4)                 0.000      1.256 f
+  U251/O (AO22X2)                                        0.144      1.400 f
+  mres_reg_reg[57]/D (QDFFRBX1)                          0.000      1.400 f
+  data arrival time                                                 1.400
+
+  clock clk (rise edge)                                  1.400      1.400
+  clock network delay (ideal)                            0.000      1.400
+  mres_reg_reg[57]/CK (QDFFRBX1)                         0.000      1.400 r
+  library setup time                                    -0.140      1.260
+  data required time                                                1.260
+  --------------------------------------------------------------------------
+  data required time                                                1.260
+  data arrival time                                                -1.400
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -0.140    > I got a positive slack with 1.5ns timing constraint, the area remains almost the same. 
+                                                                               But I noticed that with 1.4ns timing constraint a better performance is achieved when doing the pared simulation. 
+
+
+1
+ 
+****************************************
+Report : resources
+Design : multn_seq
+Version: J-2014.09-SP5
+Date   : Wed Nov 29 19:07:59 2017
+****************************************
+
+Resource Sharing Report for design multn_seq in file
+        ./HDL/RTL/multn_seq_rtl_v2.vhd
+
+===============================================================================
+|          |              |            | Contained     |                      |
+| Resource | Module       | Parameters | Resources     | Contained Operations |
+===============================================================================
+| r309     | DW01_inc     | width=5    |               | add_115              |
+| r311     | DW_cmp       | width=32   |               | lte_gte_116          |
+| r313     | DW01_sub     | width=34   |               | sub_118              |
+| r315     | DW01_sub     | width=34   |               | sub_118_2            |
+| r317     | DW01_add     | width=67   |               | add_126              |
+===============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| add_126            | DW01_add         | pparch (area,speed)                 |
+| sub_118            | DW01_sub         | pparch (area,speed)                 |
+| sub_118_2          | DW01_sub         | pparch (area,speed)                 |
+===============================================================================
+
+1
+ 
+****************************************
+Report : reference
+Design : multn_seq
+Version: J-2014.09-SP5
+Date   : Wed Nov 29 19:08:00 2017
+****************************************
+
+Attributes:
+    b - black box (unknown)
+   bo - allows boundary optimization
+    d - dont_touch
+   mo - map_only
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    s - synthetic operator
+    u - contains unmapped logic
+
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AN2B1X2            fsd0a_a_generic_core_ss0p9v125c     7.056000       1     7.056000
+AN2B1X3            fsd0a_a_generic_core_ss0p9v125c     8.624000       1     8.624000
+AN2X1              fsd0a_a_generic_core_ss0p9v125c     3.920000       1     3.920000
+AN2X2              fsd0a_a_generic_core_ss0p9v125c     5.488000       1     5.488000
+AN2X4              fsd0a_a_generic_core_ss0p9v125c    10.192000       7    71.344003
+AN2XLP             fsd0a_a_generic_core_ss0p9v125c     3.920000       1     3.920000
+AN3X1P             fsd0a_a_generic_core_ss0p9v125c     6.272000       1     6.272000
+AN3X2              fsd0a_a_generic_core_ss0p9v125c     6.272000       1     6.272000
+AN3X4              fsd0a_a_generic_core_ss0p9v125c    12.544000       2    25.087999
+AN3XLP             fsd0a_a_generic_core_ss0p9v125c     5.488000       1     5.488000
+AN4B2X1            fsd0a_a_generic_core_ss0p9v125c     5.488000       1     5.488000
+AO22X1             fsd0a_a_generic_core_ss0p9v125c     7.056000      20   141.120005
+AO22X1P            fsd0a_a_generic_core_ss0p9v125c     7.840000       2    15.680000
+AO22X2             fsd0a_a_generic_core_ss0p9v125c     7.840000       4    31.360001
+AO22XLP            fsd0a_a_generic_core_ss0p9v125c     7.056000       3    21.168001
+AO222X1            fsd0a_a_generic_core_ss0p9v125c     9.408000      30   282.240000
+AO222XLP           fsd0a_a_generic_core_ss0p9v125c     9.408000       2    18.816000
+AOI22X1            fsd0a_a_generic_core_ss0p9v125c     5.488000       2    10.976000
+AOI22X2            fsd0a_a_generic_core_ss0p9v125c    10.192000       5    50.960002
+AOI22XLP           fsd0a_a_generic_core_ss0p9v125c     5.488000       1     5.488000
+AOI23X1            fsd0a_a_generic_core_ss0p9v125c     6.272000       1     6.272000
+AOI33X1            fsd0a_a_generic_core_ss0p9v125c     7.056000       1     7.056000
+BUFX1              fsd0a_a_generic_core_ss0p9v125c     3.136000      13    40.767999
+BUFX4              fsd0a_a_generic_core_ss0p9v125c     7.056000       1     7.056000
+BUFX6              fsd0a_a_generic_core_ss0p9v125c    10.192000       1    10.192000
+BUFX12             fsd0a_a_generic_core_ss0p9v125c    19.600000       1    19.600000
+BUFX16             fsd0a_a_generic_core_ss0p9v125c    25.872000       1    25.872000
+BUFX20             fsd0a_a_generic_core_ss0p9v125c    31.360001       1    31.360001
+BUFXLP             fsd0a_a_generic_core_ss0p9v125c     3.136000       9    28.223999
+HA1X1              fsd0a_a_generic_core_ss0p9v125c    14.112000       3    42.336001 r
+INVCKX1            fsd0a_a_generic_core_ss0p9v125c     2.352000       6    14.112000
+INVCKXLP           fsd0a_a_generic_core_ss0p9v125c     2.352000      15    35.280000
+INVX1              fsd0a_a_generic_core_ss0p9v125c     2.352000      24    56.448000
+INVX1P             fsd0a_a_generic_core_ss0p9v125c     3.136000       3     9.408000
+INVX2              fsd0a_a_generic_core_ss0p9v125c     3.136000       3     9.408000
+INVX4              fsd0a_a_generic_core_ss0p9v125c     5.488000       6    32.927999
+INVX5              fsd0a_a_generic_core_ss0p9v125c     6.272000       1     6.272000
+INVX6              fsd0a_a_generic_core_ss0p9v125c     7.056000       1     7.056000
+INVX16             fsd0a_a_generic_core_ss0p9v125c    17.247999       2    34.495998
+INVXLP             fsd0a_a_generic_core_ss0p9v125c     2.352000       1     2.352000
+MAOI1X1            fsd0a_a_generic_core_ss0p9v125c     7.056000       1     7.056000
+MAOI1X1P           fsd0a_a_generic_core_ss0p9v125c     8.624000       1     8.624000
+MAOI1X2            fsd0a_a_generic_core_ss0p9v125c    10.976000       9    98.783998
+MOAI1X1            fsd0a_a_generic_core_ss0p9v125c     7.056000       1     7.056000
+MOAI1X1P           fsd0a_a_generic_core_ss0p9v125c     8.624000       7    60.367997
+MOAI1X2            fsd0a_a_generic_core_ss0p9v125c    10.976000       1    10.976000
+MUX2CKX1           fsd0a_a_generic_core_ss0p9v125c     7.056000       1     7.056000
+MUX2XLP            fsd0a_a_generic_core_ss0p9v125c     7.056000       1     7.056000
+MXL2X2             fsd0a_a_generic_core_ss0p9v125c    12.544000       1    12.544000
+ND2CKX1            fsd0a_a_generic_core_ss0p9v125c     3.136000       2     6.272000
+ND2CKX2            fsd0a_a_generic_core_ss0p9v125c     5.488000       2    10.976000
+ND2CKX3            fsd0a_a_generic_core_ss0p9v125c     7.056000       2    14.112000
+ND2CKX4            fsd0a_a_generic_core_ss0p9v125c     9.408000       1     9.408000
+ND2X1              fsd0a_a_generic_core_ss0p9v125c     3.136000      15    47.039999
+ND2X1P             fsd0a_a_generic_core_ss0p9v125c     5.488000       3    16.464000
+ND2X2              fsd0a_a_generic_core_ss0p9v125c     5.488000      26   142.687998
+ND2X3              fsd0a_a_generic_core_ss0p9v125c     7.056000       6    42.336001
+ND2X4              fsd0a_a_generic_core_ss0p9v125c     9.408000       4    37.632000
+ND2X6              fsd0a_a_generic_core_ss0p9v125c    13.328000       2    26.656000
+ND2XLP             fsd0a_a_generic_core_ss0p9v125c     3.136000      13    40.767999
+ND3X3              fsd0a_a_generic_core_ss0p9v125c    10.192000       1    10.192000
+ND3X4              fsd0a_a_generic_core_ss0p9v125c    14.112000       1    14.112000
+NR2X1              fsd0a_a_generic_core_ss0p9v125c     3.136000       1     3.136000
+NR2X2              fsd0a_a_generic_core_ss0p9v125c     5.488000       1     5.488000
+NR2X3              fsd0a_a_generic_core_ss0p9v125c     7.056000       1     7.056000
+OA12X2             fsd0a_a_generic_core_ss0p9v125c     6.272000       3    18.816000
+OAI12X1            fsd0a_a_generic_core_ss0p9v125c     4.704000       1     4.704000
+OAI12X2            fsd0a_a_generic_core_ss0p9v125c     7.840000       1     7.840000
+OAI22X1            fsd0a_a_generic_core_ss0p9v125c     5.488000       2    10.976000
+OAI112X1           fsd0a_a_generic_core_ss0p9v125c     4.704000       2     9.408000
+OAI112X2           fsd0a_a_generic_core_ss0p9v125c    10.192000      20   203.840008
+OR2B1X2            fsd0a_a_generic_core_ss0p9v125c     7.056000       1     7.056000
+OR2B1XLP           fsd0a_a_generic_core_ss0p9v125c     3.920000       1     3.920000
+OR2X1              fsd0a_a_generic_core_ss0p9v125c     3.920000       1     3.920000
+OR2XLP             fsd0a_a_generic_core_ss0p9v125c     3.920000       1     3.920000
+QDFERBX1           fsd0a_a_generic_core_ss0p9v125c    19.600000       1    19.600000 n
+QDFERBX2           fsd0a_a_generic_core_ss0p9v125c    21.167999       4    84.671997 n
+QDFERBX3           fsd0a_a_generic_core_ss0p9v125c    21.952000      25   548.799992 n
+QDFFRBX1           fsd0a_a_generic_core_ss0p9v125c    14.112000      71  1001.952033 n
+QDFFRBX2           fsd0a_a_generic_core_ss0p9v125c    15.680000       1    15.680000 n
+QDFFRBX3           fsd0a_a_generic_core_ss0p9v125c    17.247999       4    68.991997 n
+TIE0X1             fsd0a_a_generic_core_ss0p9v125c     2.352000       1     2.352000
+XOR2CKX1           fsd0a_a_generic_core_ss0p9v125c     7.840000       1     7.840000
+XOR2X4             fsd0a_a_generic_core_ss0p9v125c    21.167999       1    21.167999
+multn_seq_DW01_add_4           2083.872005       1   2083.872005  h
+multn_seq_DW01_sub_2            912.576002       1    912.576002  h
+multn_seq_DW01_sub_3           1033.311999       1   1033.311999  h
+-----------------------------------------------------------------------------
+Total 87 references                                  7882.336033
+
+****************************************
+Design: multn_seq_DW01_add_4 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AN2X4              fsd0a_a_generic_core_ss0p9v125c    10.192000       2    20.384001
+AN2XLP             fsd0a_a_generic_core_ss0p9v125c     3.920000       3    11.760000
+AO12X2             fsd0a_a_generic_core_ss0p9v125c     7.056000       1     7.056000
+AOI12X1            fsd0a_a_generic_core_ss0p9v125c     4.704000      12    56.448000
+AOI12X1P           fsd0a_a_generic_core_ss0p9v125c     7.056000       1     7.056000
+AOI12X2            fsd0a_a_generic_core_ss0p9v125c     7.840000      15   117.600002
+AOI12XLP           fsd0a_a_generic_core_ss0p9v125c     4.704000       4    18.816000
+BUFX1              fsd0a_a_generic_core_ss0p9v125c     3.136000      32   100.351997
+BUFX8              fsd0a_a_generic_core_ss0p9v125c    13.328000       1    13.328000
+BUFXLP             fsd0a_a_generic_core_ss0p9v125c     3.136000      15    47.039999
+INVCKX1            fsd0a_a_generic_core_ss0p9v125c     2.352000       7    16.464000
+INVCKX1P           fsd0a_a_generic_core_ss0p9v125c     3.136000       1     3.136000
+INVCKX2            fsd0a_a_generic_core_ss0p9v125c     3.136000       3     9.408000
+INVCKX6            fsd0a_a_generic_core_ss0p9v125c     7.056000       1     7.056000
+INVCKXLP           fsd0a_a_generic_core_ss0p9v125c     2.352000      34    79.968000
+INVX1              fsd0a_a_generic_core_ss0p9v125c     2.352000      16    37.632000
+INVX1P             fsd0a_a_generic_core_ss0p9v125c     3.136000       4    12.544000
+INVX2              fsd0a_a_generic_core_ss0p9v125c     3.136000       3     9.408000
+INVX3              fsd0a_a_generic_core_ss0p9v125c     4.704000       2     9.408000
+INVX4              fsd0a_a_generic_core_ss0p9v125c     5.488000       6    32.927999
+INVX6              fsd0a_a_generic_core_ss0p9v125c     7.056000       1     7.056000
+INVXLP             fsd0a_a_generic_core_ss0p9v125c     2.352000       5    11.760000
+ND2CKX1            fsd0a_a_generic_core_ss0p9v125c     3.136000       4    12.544000
+ND2CKX3            fsd0a_a_generic_core_ss0p9v125c     7.056000       1     7.056000
+ND2X1              fsd0a_a_generic_core_ss0p9v125c     3.136000      15    47.039999
+ND2X1P             fsd0a_a_generic_core_ss0p9v125c     5.488000       7    38.415999
+ND2X2              fsd0a_a_generic_core_ss0p9v125c     5.488000      13    71.343999
+ND2X3              fsd0a_a_generic_core_ss0p9v125c     7.056000       8    56.448002
+ND2X4              fsd0a_a_generic_core_ss0p9v125c     9.408000       2    18.816000
+ND2XLP             fsd0a_a_generic_core_ss0p9v125c     3.136000      39   122.303997
+NR2X1P             fsd0a_a_generic_core_ss0p9v125c     5.488000       3    16.464000
+NR2X2              fsd0a_a_generic_core_ss0p9v125c     5.488000      17    93.295999
+NR2X3              fsd0a_a_generic_core_ss0p9v125c     7.056000      17   119.952004
+NR2X4              fsd0a_a_generic_core_ss0p9v125c     9.408000       9    84.672000
+NR2X6              fsd0a_a_generic_core_ss0p9v125c    13.328000       8   106.624001
+NR2XLP             fsd0a_a_generic_core_ss0p9v125c     3.136000       1     3.136000
+OA12X1             fsd0a_a_generic_core_ss0p9v125c     5.488000       1     5.488000
+OAI12X1            fsd0a_a_generic_core_ss0p9v125c     4.704000      18    84.672000
+OAI12X1P           fsd0a_a_generic_core_ss0p9v125c     7.056000       2    14.112000
+OAI12X2            fsd0a_a_generic_core_ss0p9v125c     7.840000      26   203.840004
+OAI12XLP           fsd0a_a_generic_core_ss0p9v125c     4.704000       4    18.816000
+OR2B1X2            fsd0a_a_generic_core_ss0p9v125c     7.056000       1     7.056000
+OR2B1XLP           fsd0a_a_generic_core_ss0p9v125c     3.920000       3    11.760000
+OR2X1              fsd0a_a_generic_core_ss0p9v125c     3.920000       3    11.760000
+OR2X4              fsd0a_a_generic_core_ss0p9v125c     9.408000       1     9.408000
+XNR2X1             fsd0a_a_generic_core_ss0p9v125c     7.840000      19   148.960003
+XNR2X2             fsd0a_a_generic_core_ss0p9v125c    12.544000       3    37.631999
+XNR2XLP            fsd0a_a_generic_core_ss0p9v125c     7.840000       2    15.680000
+XOR2X1             fsd0a_a_generic_core_ss0p9v125c     7.840000       6    47.040001
+XOR2X2             fsd0a_a_generic_core_ss0p9v125c    12.544000       2    25.087999
+XOR2XLP            fsd0a_a_generic_core_ss0p9v125c     7.840000       1     7.840000
+-----------------------------------------------------------------------------
+Total 51 references                                  2083.872005
+
+****************************************
+Design: multn_seq_DW01_sub_2 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AN2B1XLP           fsd0a_a_generic_core_ss0p9v125c     3.920000       1     3.920000
+BUFXLP             fsd0a_a_generic_core_ss0p9v125c     3.136000       2     6.272000
+INVCKX1            fsd0a_a_generic_core_ss0p9v125c     2.352000       2     4.704000
+INVCKX1P           fsd0a_a_generic_core_ss0p9v125c     3.136000       2     6.272000
+INVCKX2            fsd0a_a_generic_core_ss0p9v125c     3.136000       8    25.087999
+INVCKX3            fsd0a_a_generic_core_ss0p9v125c     4.704000       3    14.112000
+INVCKX4            fsd0a_a_generic_core_ss0p9v125c     5.488000       4    21.952000
+INVCKX6            fsd0a_a_generic_core_ss0p9v125c     7.056000       3    21.168001
+INVCKXLP           fsd0a_a_generic_core_ss0p9v125c     2.352000       3     7.056000
+INVX1              fsd0a_a_generic_core_ss0p9v125c     2.352000       4     9.408000
+INVX2              fsd0a_a_generic_core_ss0p9v125c     3.136000       7    21.951999
+INVX3              fsd0a_a_generic_core_ss0p9v125c     4.704000       1     4.704000
+INVX5              fsd0a_a_generic_core_ss0p9v125c     6.272000       2    12.544000
+INVX8              fsd0a_a_generic_core_ss0p9v125c     9.408000       1     9.408000
+INVXLP             fsd0a_a_generic_core_ss0p9v125c     2.352000       1     2.352000
+ND2CKX1            fsd0a_a_generic_core_ss0p9v125c     3.136000       1     3.136000
+ND2X1              fsd0a_a_generic_core_ss0p9v125c     3.136000      11    34.495999
+ND2X2              fsd0a_a_generic_core_ss0p9v125c     5.488000       5    27.440000
+ND2X3              fsd0a_a_generic_core_ss0p9v125c     7.056000       8    56.448002
+ND2X4              fsd0a_a_generic_core_ss0p9v125c     9.408000       3    28.224000
+ND2X6              fsd0a_a_generic_core_ss0p9v125c    13.328000       1    13.328000
+ND2XLP             fsd0a_a_generic_core_ss0p9v125c     3.136000       6    18.816000
+NR2X1              fsd0a_a_generic_core_ss0p9v125c     3.136000      12    37.631999
+NR2X1P             fsd0a_a_generic_core_ss0p9v125c     5.488000       1     5.488000
+NR2X2              fsd0a_a_generic_core_ss0p9v125c     5.488000       9    49.391999
+NR2X3              fsd0a_a_generic_core_ss0p9v125c     7.056000       2    14.112000
+NR2X6              fsd0a_a_generic_core_ss0p9v125c    13.328000       5    66.640000
+NR2XLP             fsd0a_a_generic_core_ss0p9v125c     3.136000       5    15.680000
+OR2B1X1            fsd0a_a_generic_core_ss0p9v125c     4.704000       1     4.704000
+OR2B1X2            fsd0a_a_generic_core_ss0p9v125c     7.056000       3    21.168001
+OR2B1XLP           fsd0a_a_generic_core_ss0p9v125c     3.920000       2     7.840000
+OR2X1              fsd0a_a_generic_core_ss0p9v125c     3.920000       1     3.920000
+OR2X4              fsd0a_a_generic_core_ss0p9v125c     9.408000       4    37.632000
+XNR2X1             fsd0a_a_generic_core_ss0p9v125c     7.840000      14   109.760002
+XNR2X2             fsd0a_a_generic_core_ss0p9v125c    12.544000       2    25.087999
+XNR2X4             fsd0a_a_generic_core_ss0p9v125c    21.167999       1    21.167999
+XNR2XLP            fsd0a_a_generic_core_ss0p9v125c     7.840000       1     7.840000
+XOR2X1             fsd0a_a_generic_core_ss0p9v125c     7.840000      11    86.240002
+XOR2X2             fsd0a_a_generic_core_ss0p9v125c    12.544000       1    12.544000
+XOR2X3             fsd0a_a_generic_core_ss0p9v125c    16.464001       2    32.928001
+-----------------------------------------------------------------------------
+Total 40 references                                   912.576002
+
+****************************************
+Design: multn_seq_DW01_sub_3 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AN2B1X1P           fsd0a_a_generic_core_ss0p9v125c     5.488000       1     5.488000
+AN2B1X2            fsd0a_a_generic_core_ss0p9v125c     7.056000       1     7.056000
+AN2X1              fsd0a_a_generic_core_ss0p9v125c     3.920000       1     3.920000
+AN4B1X2            fsd0a_a_generic_core_ss0p9v125c     9.408000       1     9.408000
+AOI12XLP           fsd0a_a_generic_core_ss0p9v125c     4.704000       1     4.704000
+BUFCKX4            fsd0a_a_generic_core_ss0p9v125c     7.056000       1     7.056000
+BUFX4              fsd0a_a_generic_core_ss0p9v125c     7.056000       1     7.056000
+BUFX8              fsd0a_a_generic_core_ss0p9v125c    13.328000       1    13.328000
+BUFXLP             fsd0a_a_generic_core_ss0p9v125c     3.136000       1     3.136000
+INVCKX1            fsd0a_a_generic_core_ss0p9v125c     2.352000       3     7.056000
+INVCKX1P           fsd0a_a_generic_core_ss0p9v125c     3.136000       1     3.136000
+INVCKX2            fsd0a_a_generic_core_ss0p9v125c     3.136000       2     6.272000
+INVCKX3            fsd0a_a_generic_core_ss0p9v125c     4.704000       2     9.408000
+INVCKX4            fsd0a_a_generic_core_ss0p9v125c     5.488000       9    49.391999
+INVCKX6            fsd0a_a_generic_core_ss0p9v125c     7.056000       5    35.280001
+INVCKX8            fsd0a_a_generic_core_ss0p9v125c     9.408000       2    18.816000
+INVCKXLP           fsd0a_a_generic_core_ss0p9v125c     2.352000       8    18.816000
+INVX1              fsd0a_a_generic_core_ss0p9v125c     2.352000       2     4.704000
+INVX1P             fsd0a_a_generic_core_ss0p9v125c     3.136000       1     3.136000
+INVX2              fsd0a_a_generic_core_ss0p9v125c     3.136000       6    18.816000
+INVX3              fsd0a_a_generic_core_ss0p9v125c     4.704000       1     4.704000
+INVX4              fsd0a_a_generic_core_ss0p9v125c     5.488000       1     5.488000
+INVX5              fsd0a_a_generic_core_ss0p9v125c     6.272000       1     6.272000
+INVXLP             fsd0a_a_generic_core_ss0p9v125c     2.352000       2     4.704000
+ND2CKX1            fsd0a_a_generic_core_ss0p9v125c     3.136000       1     3.136000
+ND2CKX2            fsd0a_a_generic_core_ss0p9v125c     5.488000       1     5.488000
+ND2CKX3            fsd0a_a_generic_core_ss0p9v125c     7.056000       1     7.056000
+ND2X1              fsd0a_a_generic_core_ss0p9v125c     3.136000       9    28.223999
+ND2X1P             fsd0a_a_generic_core_ss0p9v125c     5.488000       3    16.464000
+ND2X2              fsd0a_a_generic_core_ss0p9v125c     5.488000       7    38.415999
+ND2X3              fsd0a_a_generic_core_ss0p9v125c     7.056000       4    28.224001
+ND2X4              fsd0a_a_generic_core_ss0p9v125c     9.408000       2    18.816000
+ND2X6              fsd0a_a_generic_core_ss0p9v125c    13.328000       7    93.296000
+ND2XLP             fsd0a_a_generic_core_ss0p9v125c     3.136000       9    28.223999
+NR2X1              fsd0a_a_generic_core_ss0p9v125c     3.136000       4    12.544000
+NR2X1P             fsd0a_a_generic_core_ss0p9v125c     5.488000       4    21.952000
+NR2X2              fsd0a_a_generic_core_ss0p9v125c     5.488000       5    27.440000
+NR2X3              fsd0a_a_generic_core_ss0p9v125c     7.056000       1     7.056000
+NR2X4              fsd0a_a_generic_core_ss0p9v125c     9.408000       2    18.816000
+NR2X6              fsd0a_a_generic_core_ss0p9v125c    13.328000       5    66.640000
+NR2XLP             fsd0a_a_generic_core_ss0p9v125c     3.136000       6    18.816000
+OR2B1X2            fsd0a_a_generic_core_ss0p9v125c     7.056000       2    14.112000
+OR2B1X3            fsd0a_a_generic_core_ss0p9v125c     8.624000       1     8.624000
+OR2B1XLP           fsd0a_a_generic_core_ss0p9v125c     3.920000       1     3.920000
+OR2X4              fsd0a_a_generic_core_ss0p9v125c     9.408000       3    28.224000
+XNR2X1             fsd0a_a_generic_core_ss0p9v125c     7.840000       4    31.360001
+XNR2X2             fsd0a_a_generic_core_ss0p9v125c    12.544000       4    50.175999
+XNR2XLP            fsd0a_a_generic_core_ss0p9v125c     7.840000       2    15.680000
+XOR2X1             fsd0a_a_generic_core_ss0p9v125c     7.840000      16   125.440002
+XOR2X2             fsd0a_a_generic_core_ss0p9v125c    12.544000       4    50.175999
+XOR2XLP            fsd0a_a_generic_core_ss0p9v125c     7.840000       1     7.840000
+-----------------------------------------------------------------------------
+Total 51 references                                  1033.311999
+1
+
+###############################################################
+#  Generated by:      Cadence Encounter 14.14-s028_1
+#  OS:                Linux x86_64(Host ID ieledasrv2.epfl.ch)
+#  Generated on:      Tue Nov 28 13:07:04 2017
+#  Design:            multn_seq
+#                     Gate Count
+###############################################################
+
+Gate area 2.3520 um^2
+Level 0 Module multn_seq          Gates=      3623 Cells=    1283 Area=    8522.1 um^2
+
+
+###############################################################
+#  Generated by:      Cadence Encounter 14.14-s028_1
+#  OS:                Linux x86_64(Host ID ieledasrv2.epfl.ch)
+#  Generated on:      Tue Nov 28 13:07:04 2017
+#  Design:            multn_seq
+#  Command:           report_timing > ${rpt_dir}/timing_final.rpt
+###############################################################
+Path 1: VIOLATED Setup Check with Pin mres_reg_reg_57_/CK 
+Endpoint:   mres_reg_reg_57_/D  (v) checked with  leading edge of 'clk'
+Beginpoint: opa_r_reg_reg_10_/Q (v) triggered by  leading edge of 'clk'
+Analysis View: analysis_setup
+Other End Arrival Time          0.094
+- Setup                         0.118
++ Phase Shift                   1.400
+= Required Time                 1.376
+- Arrival Time                  1.429
+= Slack Time                   -0.053
+     Clock Rise Edge                 0.000
+     + Clock Network Latency (Prop)  0.094
+     = Beginpoint Arrival Time       0.094
+     +-------------------------------------------------------------------------------+ 
+     |        Instance         |     Arc     |   Cell   | Delay | Arrival | Required | 
+     |                         |             |          |       |  Time   |   Time   | 
+     |-------------------------+-------------+----------+-------+---------+----------| 
+     | opa_r_reg_reg_10_       | CK ^        |          |       |   0.094 |    0.041 | 
+     | opa_r_reg_reg_10_       | CK ^ -> Q v | QDFERBX3 | 0.206 |   0.299 |    0.246 | 
+     | sub_118_2/U187          | I v -> O ^  | INVCKX4  | 0.027 |   0.327 |    0.274 | 
+     | sub_118_2/U245          | I1 ^ -> O v | ND2X3    | 0.037 |   0.364 |    0.311 | 
+     | sub_118_2/U244          | I1 v -> O ^ | NR2X6    | 0.070 |   0.434 |    0.381 | 
+     | sub_118_2/U251          | I2 ^ -> O v | ND2X4    | 0.059 |   0.492 |    0.439 | 
+     | sub_118_2/U107          | I1 v -> O ^ | NR2X6    | 0.072 |   0.564 |    0.511 | 
+     | sub_118_2/FE_OCPC65_n88 | I ^ -> O v  | INVX8    | 0.045 |   0.609 |    0.556 | 
+     | sub_118_2/U226          | I2 v -> O ^ | NR2X3    | 0.057 |   0.667 |    0.614 | 
+     | sub_118_2/U282          | I2 ^ -> O v | XNR2X2   | 0.043 |   0.709 |    0.656 | 
+     | U409                    | I1 v -> O ^ | ND2X3    | 0.043 |   0.752 |    0.699 | 
+     | U228                    | I2 ^ -> O v | ND3X4    | 0.067 |   0.819 |    0.766 | 
+     | add_126/U624            | I2 v -> O ^ | NR2X6    | 0.061 |   0.881 |    0.828 | 
+     | add_126/U767            | B2 ^ -> O v | OAI12X2  | 0.051 |   0.932 |    0.879 | 
+     | add_126/U776            | B2 v -> O ^ | AOI12X2  | 0.098 |   1.030 |    0.977 | 
+     | add_126/U780            | B1 ^ -> O v | OAI12X2  | 0.054 |   1.084 |    1.031 | 
+     | add_126/FE_OCPC52_n3    | I v -> O v  | BUFX4    | 0.078 |   1.162 |    1.109 | 
+     | add_126/U516            | B1 v -> O ^ | AOI12X2  | 0.069 |   1.232 |    1.179 | 
+     | add_126/U527            | A1 ^ -> O v | OAI12X2  | 0.054 |   1.286 |    1.233 | 
+     | add_126/U478            | I2 v -> O v | XNR2X1   | 0.073 |   1.359 |    1.306 | 
+     | FE_RC_465_0             | I1 v -> O ^ | ND2X2    | 0.033 |   1.391 |    1.338 | 
+     | FE_RC_464_0             | I1 ^ -> O v | ND2X1    | 0.038 |   1.429 |    1.376 | 
+     | mres_reg_reg_57_        | D v         | QDFFRBX1 | 0.000 |   1.429 |    1.376 | 
+     +-------------------------------------------------------------------------------+ 
+
+
+#################################################################
+#The minimum achieved clock
+#################################################################
+The minimum achieved clock period: 1.4ns
+This was tested under modelsim with max delay after obtaining the pared design.
+
+
+##################################################################
+#The number of clock cycles for each computation:
+##################################################################
+The sequential implementation of the multiplier uses booth radix 4 : 16 cycles are needed to finish the computation.
+A load state is used so an additional clock cycle is required to get the final result.
+-------------------------------
+The total number of cycles : 17. 
+-------------------------------
+##################################################################
+#Number of rows 
+##################################################################
+
+Number of rows of the design in encounter with an aspect ratio of 1 :: 33rows
+
+

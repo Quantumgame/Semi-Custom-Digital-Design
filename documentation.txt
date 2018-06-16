@@ -1,0 +1,48 @@
+**************************************************************************************************
+********************Algorithm used to implement the sequential multiplier    *********************
+********************                 Booth radix4                            *********************
+**************************************************************************************************
+--------------
+Booth radix 4:
+--------------
+With booth radix 4 it is possible to reduce the number of partial products by half. The idea here is instead of shifting and adding the Multiplicand term and multiplying by 1 or 0 for every bit of the multiplier (32 bits in the case of this project), we only do that for every second bit, but multiplying in this case Multiplicand by ±1, ±2, or 0  [2]. 
+
+To find the partial products the bits of the multiplier are grouped in blocks of three, 
+the different blocks and its corresponding Partial Product are showed below:
+
+Block	 Partial Product
+000	 0
+001	 1 * Multiplicand
+010	 1 * Multiplicand
+011	 2 * Multiplicand
+100     -2 * Multiplicand
+101	-1 * Multiplicand
+110	-1 * Multiplicand
+111	 0
+
+The final step is to add all the partial products together to get the final result. 
+In the sequential implementation designed during this project, during each clock cycle one partial product is added to the total sum. So, to multiply two 32bits numbers 16 clock cycle are needed.
+
+**********
+Reference. 
+**********
+1) Implementation of Modified Booth Algorithm (Radix 4) and its Comparison with Booth Algorithm (Radix-2) 
+Sukhmeet Kaur1, Suman2 and Manpreet Signh Manna31ECE, SSIET (P.T.U), Derabassi, Punjab, India. 2ECE, SSIET, Derabassi, Punjab, India. 
+3EIE, SLIET (Deemed University), Longowal, Sangrur, India.
+
+2) http://www.geoffknagge.com/fyp/booth.shtml
+
+************************************************************************************************
+***********************Sequential multiplier integration in the ALU*****************************
+************************************************************************************************
+
+alu32dp version 2:
+The sequential multiplier is included inside the alu32dp with its output connected to the mux (controlled with cmd), the port map of the dp unit was changed to accommodate the additional signals required by the multiplier like rst_b, clk, start and done.  
+
+alu32ctrl version 2:
+The output done of the multiplier is connected to the alu32ctrl (under the name: end_mult) when the multiplication is finished the end_mult is high which leads the alu32ctrl to change states form ST_OPT to ST_SPLIT, In case the addition or subtraction is selected the end_mult is always high. 
+The start signal of the multiplier is controlled inside this unit (you can find it under the name: stb_mult), when cmd = '11' the start signal is activated and the mult starts operating (the cmd is called by both ctrl and dp in this new version of alu).
+
+alu32top version 2:
+The top unit was changed to take into account the different connections added between alu32dp and alu32ctrl (done and start), and also adding the rst_b and clk to alu32dp
+and cmd to alu32ctrl.

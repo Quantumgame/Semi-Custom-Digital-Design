@@ -1,0 +1,588 @@
+*******************************************************************
+************************ alu32top Reports design*******************
+*******************************************************************
+
+***************************************************************
+Register inference from elaboration.
+***************************************************************
+
+Inferred memory devices in process
+        in routine alu32top line 52 in file
+                './HDL/RTL/alu32top_rtl_v2.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     op2_reg_reg     | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     op1_reg_reg     | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+
+Inferred memory devices in process
+        in routine alu32split line 30 in file
+                './HDL/RTL/alu32split_rtl.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      bysel_reg      | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|     din_reg_reg     | Flip-flop |  64   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+
+Inferred memory devices in process
+        in routine alu32ctrl line 51 in file
+                './HDL/RTL/alu32ctrl_rtl_v2.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    addr_reg_reg     | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    state_reg_reg    | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine multn_seq_NBITS32 line 43 in file
+                './HDL/RTL/multn_seq_rtl_v2.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    state_reg_reg    | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine multn_seq_NBITS32 line 75 in file
+                './HDL/RTL/multn_seq_rtl_v2.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    opa_r_reg_reg    | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    count_reg_reg    | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    mres_reg_reg     | Flip-flop |  67   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+ 
+****************************************
+Report : area
+Design : alu32top
+Version: J-2014.09-SP5
+Date   : Wed Nov 29 18:51:16 2017
+****************************************
+
+Library(s) Used:
+
+    fsd0a_a_generic_core_ss0p9v125c (File: /dkits/fday/90nm/std_process/core_rvt/2011Q2v2.2/GENERIC_CORE_1D0V/FrontEnd/synopsys/synthesis/fsd0a_a_generic_core_ss0p9v125c.db)
+    SYAA90_16X32X1CM2_WC (File: /home/edabd6/ALU32/SNPS_DC/DB/SYAA90_16X32X1CM2_WC.db)
+
+Number of ports:                          166
+Number of nets:                           274
+Number of cells:                           70
+Number of combinational cells:              2
+Number of sequential cells:                64
+Number of macros/black boxes:               1
+Number of buf/inv:                          2
+Number of references:                       7
+
+Combinational area:               6438.992029
+Buf/Inv area:                      546.447996
+Noncombinational area:            3943.520104
+Macro/Black Box area:             8909.685547
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                 19292.197680
+Total area:                 undefined
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area             Local cell area
+                                  -------------------  ------------------------------- 
+Hierarchical cell                 Absolute    Percent  Combi-     Noncombi-  Black-
+                                  Total       Total    national   national   boxes      Design
+--------------------------------  ----------  -------  ---------  ---------  ---------  ----------------------------
+alu32top                          19292.1977    100.0     5.4880  1254.4000  8909.6855  alu32top
+I_CTRL                              200.7040      1.0   101.1360    99.5680     0.0000  alu32ctrl
+I_DP                               7210.4481     37.4   524.4960     0.0000     0.0000  alu32dp
+I_DP/MULT_SEQ                      4991.7281     25.9  1455.1040  1672.2720     0.0000  multn_seq_NBITS32
+I_DP/MULT_SEQ/add_126               952.5600      4.9   952.5600     0.0000     0.0000  multn_seq_NBITS32_DW01_add_0
+I_DP/MULT_SEQ/sub_118               450.0160      2.3   450.0160     0.0000     0.0000  multn_seq_NBITS32_DW01_sub_1
+I_DP/MULT_SEQ/sub_118_2             461.7760      2.4   461.7760     0.0000     0.0000  multn_seq_NBITS32_DW01_sub_0
+I_DP/add_61                         813.7920      4.2   813.7920     0.0000     0.0000  alu32dp_DW01_add_0
+I_DP/sub_63                         880.4320      4.6   880.4320     0.0000     0.0000  alu32dp_DW01_sub_0
+I_SPLIT                            1711.4720      8.9   794.1920   917.2800     0.0000  alu32split
+--------------------------------  ----------  -------  ---------  ---------  ---------  ----------------------------
+Total                                                  6438.9920  3943.5201  8909.6855
+
+
+Area of detected synthetic parts
+--------------------------------
+                                      Perc. of
+  Module   Implem.  Count       Area cell area
+  -------- -------  ----- ---------- ---------
+  DW01_add     rpl      2  1766.3524      9.2%
+  DW01_sub     rpl      3  1792.2241      9.3%
+  -------- -------  ----- ---------- ---------
+  Total:                5  3558.5765     18.4%
+
+Estimated area of ungrouped synthetic parts
+-------------------------------------------
+                           Estimated  Perc. of
+  Module   Implem.  Count       Area cell area
+  -------- -------  ----- ---------- ---------
+  DW01_inc     rpl      2    80.3979      0.4%
+  DW_cmp   apparch      1     2.1255      0.0%
+  -------- -------  ----- ---------- ---------
+  Total:                3    82.5234      0.4%
+
+Total synthetic cell area:              3641.1000  18.9%  (estimated)
+
+1
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : alu32top
+Version: J-2014.09-SP5
+Date   : Wed Nov 29 18:51:16 2017
+****************************************
+
+Operating Conditions: WCCOM   Library: fsd0a_a_generic_core_ss0p9v125c
+Wire Load Model Mode: top
+
+  Startpoint: I_DP/MULT_SEQ/mres_reg_reg[2]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: I_DP/MULT_SEQ/mres_reg_reg[64]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  alu32top           enG10K                fsd0a_a_generic_core_ss0p9v125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                  0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  I_DP/MULT_SEQ/mres_reg_reg[2]/CK (QDFFRBX1)            0.000      0.000 r
+  I_DP/MULT_SEQ/mres_reg_reg[2]/Q (QDFFRBX1)             0.522      0.522 r
+  I_DP/MULT_SEQ/U150/O (BUFX1)                           0.472      0.995 r
+  I_DP/MULT_SEQ/U6/O (XOR2X1)                            0.759      1.754 r
+  I_DP/MULT_SEQ/U145/O (MUXB2X1)                         0.144      1.898 f
+  I_DP/MULT_SEQ/U144/O (MUX2X1)                          0.175      2.073 f
+  I_DP/MULT_SEQ/add_126/B[34] (multn_seq_NBITS32_DW01_add_0)
+                                                         0.000      2.073 f
+  I_DP/MULT_SEQ/add_126/U1_34/CO (FA1X1)                 0.161      2.235 f
+  I_DP/MULT_SEQ/add_126/U1_35/CO (FA1X1)                 0.137      2.372 f
+  I_DP/MULT_SEQ/add_126/U1_36/CO (FA1X1)                 0.137      2.509 f
+  I_DP/MULT_SEQ/add_126/U1_37/CO (FA1X1)                 0.137      2.647 f
+  I_DP/MULT_SEQ/add_126/U1_38/CO (FA1X1)                 0.137      2.784 f
+  I_DP/MULT_SEQ/add_126/U1_39/CO (FA1X1)                 0.137      2.921 f
+  I_DP/MULT_SEQ/add_126/U1_40/CO (FA1X1)                 0.137      3.058 f
+  I_DP/MULT_SEQ/add_126/U1_41/CO (FA1X1)                 0.137      3.195 f
+  I_DP/MULT_SEQ/add_126/U1_42/CO (FA1X1)                 0.137      3.333 f
+  I_DP/MULT_SEQ/add_126/U1_43/CO (FA1X1)                 0.137      3.470 f
+  I_DP/MULT_SEQ/add_126/U1_44/CO (FA1X1)                 0.137      3.607 f
+  I_DP/MULT_SEQ/add_126/U1_45/CO (FA1X1)                 0.137      3.744 f
+  I_DP/MULT_SEQ/add_126/U1_46/CO (FA1X1)                 0.137      3.882 f
+  I_DP/MULT_SEQ/add_126/U1_47/CO (FA1X1)                 0.137      4.019 f
+  I_DP/MULT_SEQ/add_126/U1_48/CO (FA1X1)                 0.137      4.156 f
+  I_DP/MULT_SEQ/add_126/U1_49/CO (FA1X1)                 0.137      4.293 f
+  I_DP/MULT_SEQ/add_126/U1_50/CO (FA1X1)                 0.137      4.431 f
+  I_DP/MULT_SEQ/add_126/U1_51/CO (FA1X1)                 0.137      4.568 f
+  I_DP/MULT_SEQ/add_126/U1_52/CO (FA1X1)                 0.137      4.705 f
+  I_DP/MULT_SEQ/add_126/U1_53/CO (FA1X1)                 0.137      4.842 f
+  I_DP/MULT_SEQ/add_126/U1_54/CO (FA1X1)                 0.137      4.980 f
+  I_DP/MULT_SEQ/add_126/U1_55/CO (FA1X1)                 0.137      5.117 f
+  I_DP/MULT_SEQ/add_126/U1_56/CO (FA1X1)                 0.137      5.254 f
+  I_DP/MULT_SEQ/add_126/U1_57/CO (FA1X1)                 0.137      5.391 f
+  I_DP/MULT_SEQ/add_126/U1_58/CO (FA1X1)                 0.137      5.528 f
+  I_DP/MULT_SEQ/add_126/U1_59/CO (FA1X1)                 0.137      5.666 f
+  I_DP/MULT_SEQ/add_126/U1_60/CO (FA1X1)                 0.137      5.803 f
+  I_DP/MULT_SEQ/add_126/U1_61/CO (FA1X1)                 0.137      5.940 f
+  I_DP/MULT_SEQ/add_126/U1_62/CO (FA1X1)                 0.137      6.077 f
+  I_DP/MULT_SEQ/add_126/U1_63/CO (FA1X1)                 0.137      6.215 f
+  I_DP/MULT_SEQ/add_126/U1_64/CO (FA1X1)                 0.137      6.352 f
+  I_DP/MULT_SEQ/add_126/U1_65/CO (FA1X1)                 0.125      6.477 f
+  I_DP/MULT_SEQ/add_126/U1_66/O (XOR3X1)                 0.107      6.584 f
+  I_DP/MULT_SEQ/add_126/SUM[66] (multn_seq_NBITS32_DW01_add_0)
+                                                         0.000      6.584 f
+  I_DP/MULT_SEQ/U146/O (AN2X1)                           0.098      6.682 f
+  I_DP/MULT_SEQ/U155/O (AO12X1)                          0.143      6.826 f
+  I_DP/MULT_SEQ/mres_reg_reg[64]/D (QDFFRBX1)            0.000      6.826 f
+  data arrival time                                                 6.826
+
+  clock clk (rise edge)                                 10.000     10.000
+  clock network delay (ideal)                            0.000     10.000
+  I_DP/MULT_SEQ/mres_reg_reg[64]/CK (QDFFRBX1)           0.000     10.000 r
+  library setup time                                    -0.141      9.859
+  data required time                                                9.859
+  --------------------------------------------------------------------------
+  data required time                                                9.859
+  data arrival time                                                -6.826
+  --------------------------------------------------------------------------
+  slack (MET)                                                       3.033
+
+
+1
+ 
+****************************************
+Report : resources
+Design : alu32top
+Version: J-2014.09-SP5
+Date   : Wed Nov 29 18:51:16 2017
+****************************************
+
+
+No resource sharing information to report.
+
+No implementations to report
+ 
+****************************************
+Design : alu32ctrl
+****************************************
+Resource Sharing Report for design alu32ctrl in file
+        ./HDL/RTL/alu32ctrl_rtl_v2.vhd
+
+===============================================================================
+|          |              |            | Contained     |                      |
+| Resource | Module       | Parameters | Resources     | Contained Operations |
+===============================================================================
+| r294     | DW01_inc     | width=4    |               | add_107              |
+===============================================================================
+
+
+No implementations to report
+
+No resource sharing information to report.
+ 
+****************************************
+Design : alu32split
+****************************************
+
+No implementations to report
+ 
+****************************************
+Design : alu32dp
+****************************************
+Resource Sharing Report for design alu32dp in file
+        ./HDL/RTL/alu32dp_rtl_v2.vhd
+
+===============================================================================
+|          |              |            | Contained     |                      |
+| Resource | Module       | Parameters | Resources     | Contained Operations |
+===============================================================================
+| r296     | DW01_add     | width=32   |               | add_61               |
+| r298     | DW01_sub     | width=32   |               | sub_63               |
+===============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| add_61             | DW01_add         | rpl                |                |
+| sub_63             | DW01_sub         | rpl                |                |
+===============================================================================
+
+ 
+****************************************
+Design : multn_seq_NBITS32
+****************************************
+Resource Sharing Report for design multn_seq_NBITS32 in file
+        ./HDL/RTL/multn_seq_rtl_v2.vhd
+
+===============================================================================
+|          |              |            | Contained     |                      |
+| Resource | Module       | Parameters | Resources     | Contained Operations |
+===============================================================================
+| r309     | DW01_inc     | width=5    |               | add_115              |
+| r311     | DW_cmp       | width=32   |               | lte_gte_116          |
+| r313     | DW01_sub     | width=34   |               | sub_118              |
+| r315     | DW01_sub     | width=34   |               | sub_118_2            |
+| r317     | DW01_add     | width=67   |               | add_126              |
+===============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| sub_118            | DW01_sub         | rpl                |                |
+| sub_118_2          | DW01_sub         | rpl                |                |
+| add_126            | DW01_add         | rpl                |                |
+===============================================================================
+
+1
+ 
+****************************************
+Report : reference
+Design : alu32top
+Version: J-2014.09-SP5
+Date   : Wed Nov 29 18:51:16 2017
+****************************************
+
+Attributes:
+    b - black box (unknown)
+   bo - allows boundary optimization
+    d - dont_touch
+   mo - map_only
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    s - synthetic operator
+    u - contains unmapped logic
+
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+BUFX1              fsd0a_a_generic_core_ss0p9v125c     3.136000       1     3.136000
+INVX1              fsd0a_a_generic_core_ss0p9v125c     2.352000       1     2.352000
+QDFERBX1           fsd0a_a_generic_core_ss0p9v125c    19.600000      64  1254.400024 n
+SYAA90_16X32X1CM2  SYAA90_16X32X1CM2_WC  8909.685547       1  8909.685547 b, d
+alu32ctrl                       200.704003       1    200.704003  h, n
+alu32dp                        7210.448064       1   7210.448064  h, n
+alu32split                     1711.472042       1   1711.472042  h, n
+-----------------------------------------------------------------------------
+Total 7 references                                  19292.197680
+
+****************************************
+Design: alu32ctrl 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AN2B1XLP           fsd0a_a_generic_core_ss0p9v125c     3.920000       1     3.920000
+AN2X1              fsd0a_a_generic_core_ss0p9v125c     3.920000       2     7.840000
+AN4B1XLP           fsd0a_a_generic_core_ss0p9v125c     5.488000       1     5.488000
+AOI122X1           fsd0a_a_generic_core_ss0p9v125c     7.056000       1     7.056000
+BUFX1              fsd0a_a_generic_core_ss0p9v125c     3.136000       1     3.136000
+DFFRBX1            fsd0a_a_generic_core_ss0p9v125c    14.896000       1    14.896000 n
+INVX1              fsd0a_a_generic_core_ss0p9v125c     2.352000       3     7.056000
+ND2X1              fsd0a_a_generic_core_ss0p9v125c     3.136000       2     6.272000
+NR2X1              fsd0a_a_generic_core_ss0p9v125c     3.136000       2     6.272000
+NR3X1              fsd0a_a_generic_core_ss0p9v125c     4.704000       1     4.704000
+OAI22X1            fsd0a_a_generic_core_ss0p9v125c     5.488000       1     5.488000
+OAI23X1            fsd0a_a_generic_core_ss0p9v125c     6.272000       2    12.544000
+QDFFRBX1           fsd0a_a_generic_core_ss0p9v125c    14.112000       6    84.672003 n
+XNR2X1             fsd0a_a_generic_core_ss0p9v125c     7.840000       1     7.840000
+XOR2X1             fsd0a_a_generic_core_ss0p9v125c     7.840000       3    23.520000
+-----------------------------------------------------------------------------
+Total 15 references                                   200.704003
+
+****************************************
+Design: alu32dp 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AN2X1              fsd0a_a_generic_core_ss0p9v125c     3.920000       5    19.600000
+AO12X1             fsd0a_a_generic_core_ss0p9v125c     5.488000      33   181.103997
+AO22X1             fsd0a_a_generic_core_ss0p9v125c     7.056000       3    21.168001
+AO222X1            fsd0a_a_generic_core_ss0p9v125c     9.408000      31   291.648000
+BUFX1              fsd0a_a_generic_core_ss0p9v125c     3.136000       1     3.136000
+INVX1              fsd0a_a_generic_core_ss0p9v125c     2.352000       1     2.352000
+NR2X1              fsd0a_a_generic_core_ss0p9v125c     3.136000       1     3.136000
+TIE0X1             fsd0a_a_generic_core_ss0p9v125c     2.352000       1     2.352000
+alu32dp_DW01_add_0              813.791992       1    813.791992  h
+alu32dp_DW01_sub_0              880.431993       1    880.431993  h
+multn_seq_NBITS32              4991.728081       1   4991.728081  h, n
+-----------------------------------------------------------------------------
+Total 11 references                                  7210.448064
+
+****************************************
+Design: alu32dp_DW01_add_0 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AN2X1              fsd0a_a_generic_core_ss0p9v125c     3.920000       1     3.920000
+FA1X1              fsd0a_a_generic_core_ss0p9v125c    25.872000      31   802.031992 r
+XOR2X1             fsd0a_a_generic_core_ss0p9v125c     7.840000       1     7.840000
+-----------------------------------------------------------------------------
+Total 3 references                                    813.791992
+
+****************************************
+Design: alu32dp_DW01_sub_0 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+FA1X1              fsd0a_a_generic_core_ss0p9v125c    25.872000      30   776.159992 r
+INVX1              fsd0a_a_generic_core_ss0p9v125c     2.352000      33    77.616000
+ND2X1              fsd0a_a_generic_core_ss0p9v125c     3.136000       1     3.136000
+XNR2X1             fsd0a_a_generic_core_ss0p9v125c     7.840000       1     7.840000
+XOR3X1             fsd0a_a_generic_core_ss0p9v125c    15.680000       1    15.680000
+-----------------------------------------------------------------------------
+Total 5 references                                    880.431993
+
+****************************************
+Design: multn_seq_NBITS32 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AN2B1XLP           fsd0a_a_generic_core_ss0p9v125c     3.920000       2     7.840000
+AN2X1              fsd0a_a_generic_core_ss0p9v125c     3.920000       3    11.760000
+AN4B2X1            fsd0a_a_generic_core_ss0p9v125c     5.488000       1     5.488000
+AO12X1             fsd0a_a_generic_core_ss0p9v125c     5.488000       3    16.464000
+AO22X1             fsd0a_a_generic_core_ss0p9v125c     7.056000      37   261.072009
+AO222X1            fsd0a_a_generic_core_ss0p9v125c     9.408000      32   301.056000
+BUFX1              fsd0a_a_generic_core_ss0p9v125c     3.136000       5    15.680000
+DFERBX1            fsd0a_a_generic_core_ss0p9v125c    20.384001       1    20.384001 n
+HA1X1              fsd0a_a_generic_core_ss0p9v125c    14.112000       3    42.336001 r
+INVCKX1            fsd0a_a_generic_core_ss0p9v125c     2.352000       1     2.352000
+INVCKXLP           fsd0a_a_generic_core_ss0p9v125c     2.352000       1     2.352000
+INVX1              fsd0a_a_generic_core_ss0p9v125c     2.352000       6    14.112000
+MUX2X1             fsd0a_a_generic_core_ss0p9v125c     7.056000      68   479.808016
+MUXB2X1            fsd0a_a_generic_core_ss0p9v125c     7.840000      31   243.040005
+ND2X1              fsd0a_a_generic_core_ss0p9v125c     3.136000       1     3.136000
+NR2X1              fsd0a_a_generic_core_ss0p9v125c     3.136000       3     9.408000
+OAI12X1            fsd0a_a_generic_core_ss0p9v125c     4.704000       2     9.408000
+OR2X1              fsd0a_a_generic_core_ss0p9v125c     3.920000       1     3.920000
+QDFERBX1           fsd0a_a_generic_core_ss0p9v125c    19.600000      31   607.600012 n
+QDFFRBX1           fsd0a_a_generic_core_ss0p9v125c    14.112000      74  1044.288034 n
+TIE0X1             fsd0a_a_generic_core_ss0p9v125c     2.352000       1     2.352000
+XNR2X1             fsd0a_a_generic_core_ss0p9v125c     7.840000       1     7.840000
+XOR2CKX1           fsd0a_a_generic_core_ss0p9v125c     7.840000       1     7.840000
+XOR2X1             fsd0a_a_generic_core_ss0p9v125c     7.840000       1     7.840000
+multn_seq_NBITS32_DW01_add_0    952.559990       1    952.559990  h
+multn_seq_NBITS32_DW01_sub_0    461.776007       1    461.776007  h
+multn_seq_NBITS32_DW01_sub_1    450.016007       1    450.016007  h
+-----------------------------------------------------------------------------
+Total 27 references                                  4991.728081
+
+****************************************
+Design: multn_seq_NBITS32_DW01_add_0 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AN2X1              fsd0a_a_generic_core_ss0p9v125c     3.920000       1     3.920000
+BUFX1              fsd0a_a_generic_core_ss0p9v125c     3.136000      31    97.215997
+FA1X1              fsd0a_a_generic_core_ss0p9v125c    25.872000      32   827.903992 r
+XOR2X1             fsd0a_a_generic_core_ss0p9v125c     7.840000       1     7.840000
+XOR3X1             fsd0a_a_generic_core_ss0p9v125c    15.680000       1    15.680000
+-----------------------------------------------------------------------------
+Total 5 references                                    952.559990
+
+****************************************
+Design: multn_seq_NBITS32_DW01_sub_0 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AN2X1              fsd0a_a_generic_core_ss0p9v125c     3.920000      31   121.520002
+BUFX1              fsd0a_a_generic_core_ss0p9v125c     3.136000       1     3.136000
+INVX1              fsd0a_a_generic_core_ss0p9v125c     2.352000      32    75.264000
+ND2X1              fsd0a_a_generic_core_ss0p9v125c     3.136000       1     3.136000
+XNR2X1             fsd0a_a_generic_core_ss0p9v125c     7.840000       1     7.840000
+XOR2X1             fsd0a_a_generic_core_ss0p9v125c     7.840000      32   250.880005
+-----------------------------------------------------------------------------
+Total 6 references                                    461.776007
+
+****************************************
+Design: multn_seq_NBITS32_DW01_sub_1 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AN2X1              fsd0a_a_generic_core_ss0p9v125c     3.920000      30   117.600002
+BUFX1              fsd0a_a_generic_core_ss0p9v125c     3.136000       1     3.136000
+INVX1              fsd0a_a_generic_core_ss0p9v125c     2.352000      32    75.264000
+ND2X1              fsd0a_a_generic_core_ss0p9v125c     3.136000       1     3.136000
+XNR2X1             fsd0a_a_generic_core_ss0p9v125c     7.840000       1     7.840000
+XOR2X1             fsd0a_a_generic_core_ss0p9v125c     7.840000      31   243.040005
+-----------------------------------------------------------------------------
+Total 6 references                                    450.016007
+
+****************************************
+Design: alu32split 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+BUFX1              fsd0a_a_generic_core_ss0p9v125c     3.136000       1     3.136000
+BUFXLP             fsd0a_a_generic_core_ss0p9v125c     3.136000       1     3.136000
+INVX1              fsd0a_a_generic_core_ss0p9v125c     2.352000      65   152.880000
+MOAI1X1            fsd0a_a_generic_core_ss0p9v125c     7.056000      64   451.584015
+OAI22X1            fsd0a_a_generic_core_ss0p9v125c     5.488000      32   175.615997
+QDFFRBX1           fsd0a_a_generic_core_ss0p9v125c    14.112000      65   917.280030 n
+XOR2X1             fsd0a_a_generic_core_ss0p9v125c     7.840000       1     7.840000
+-----------------------------------------------------------------------------
+Total 7 references                                   1711.472042
+1
+
+###############################################################
+#  Generated by:      Cadence Encounter 14.14-s028_1
+#  OS:                Linux x86_64(Host ID ieledasrv2.epfl.ch)
+#  Generated on:      Wed Nov 29 22:58:54 2017
+#  Design:            alu32top
+#  Command:           report_timing > ${rpt_dir}/timing_final.rpt
+###############################################################
+Path 1: MET Setup Check with Pin I_DP/MULT_SEQ/mres_reg_reg_65_/CK 
+Endpoint:   I_DP/MULT_SEQ/mres_reg_reg_65_/D (v) checked with  leading edge of 
+'clk'
+Beginpoint: I_DP/MULT_SEQ/mres_reg_reg_2_/Q  (^) triggered by  leading edge of 
+'clk'
+Analysis View: analysis_setup
+Other End Arrival Time          0.114
+- Setup                         0.123
++ Phase Shift                  10.000
+= Required Time                 9.990
+- Arrival Time                  6.596
+= Slack Time                    3.394
+     Clock Rise Edge                 0.000
+     + Clock Network Latency (Prop)  0.106
+     = Beginpoint Arrival Time       0.106
+     +---------------------------------------------------------------------------------------+ 
+     |            Instance            |     Arc      |   Cell   | Delay | Arrival | Required | 
+     |                                |              |          |       |  Time   |   Time   | 
+     |--------------------------------+--------------+----------+-------+---------+----------| 
+     | I_DP/MULT_SEQ/mres_reg_reg_2_  | CK ^         |          |       |   0.106 |    3.500 | 
+     | I_DP/MULT_SEQ/mres_reg_reg_2_  | CK ^ -> Q ^  | QDFFRBX1 | 0.482 |   0.588 |    3.982 | 
+     | I_DP/MULT_SEQ/U150             | I ^ -> O ^   | BUFX1    | 0.397 |   0.985 |    4.379 | 
+     | I_DP/MULT_SEQ/U6               | I2 ^ -> O ^  | XOR2X1   | 0.633 |   1.619 |    5.013 | 
+     | I_DP/MULT_SEQ/U145             | EB ^ -> O v  | MUXB2X1  | 0.126 |   1.744 |    5.138 | 
+     | I_DP/MULT_SEQ/U144             | A v -> O v   | MUX2X1   | 0.172 |   1.916 |    5.310 | 
+     | I_DP/MULT_SEQ/add_126/U1_34    | B v -> CO v  | FA1X1    | 0.160 |   2.076 |    5.470 | 
+     | I_DP/MULT_SEQ/add_126/U1_35    | CI v -> CO v | FA1X1    | 0.135 |   2.211 |    5.605 | 
+     | I_DP/MULT_SEQ/add_126/U1_36    | CI v -> CO v | FA1X1    | 0.137 |   2.348 |    5.743 | 
+     | I_DP/MULT_SEQ/add_126/U1_37    | CI v -> CO v | FA1X1    | 0.135 |   2.483 |    5.878 | 
+     | I_DP/MULT_SEQ/add_126/U1_38    | CI v -> CO v | FA1X1    | 0.135 |   2.619 |    6.013 | 
+     | I_DP/MULT_SEQ/add_126/U1_39    | CI v -> CO v | FA1X1    | 0.134 |   2.753 |    6.147 | 
+     | I_DP/MULT_SEQ/add_126/U1_40    | CI v -> CO v | FA1X1    | 0.135 |   2.888 |    6.282 | 
+     | I_DP/MULT_SEQ/add_126/U1_41    | CI v -> CO v | FA1X1    | 0.138 |   3.026 |    6.420 | 
+     | I_DP/MULT_SEQ/add_126/U1_42    | CI v -> CO v | FA1X1    | 0.136 |   3.162 |    6.556 | 
+     | I_DP/MULT_SEQ/add_126/U1_43    | CI v -> CO v | FA1X1    | 0.136 |   3.297 |    6.691 | 
+     | I_DP/MULT_SEQ/add_126/U1_44    | CI v -> CO v | FA1X1    | 0.138 |   3.435 |    6.830 | 
+     | I_DP/MULT_SEQ/add_126/U1_45    | CI v -> CO v | FA1X1    | 0.135 |   3.570 |    6.964 | 
+     | I_DP/MULT_SEQ/add_126/U1_46    | CI v -> CO v | FA1X1    | 0.136 |   3.706 |    7.100 | 
+     | I_DP/MULT_SEQ/add_126/U1_47    | CI v -> CO v | FA1X1    | 0.135 |   3.841 |    7.235 | 
+     | I_DP/MULT_SEQ/add_126/U1_48    | CI v -> CO v | FA1X1    | 0.139 |   3.980 |    7.375 | 
+     | I_DP/MULT_SEQ/add_126/U1_49    | CI v -> CO v | FA1X1    | 0.136 |   4.117 |    7.511 | 
+     | I_DP/MULT_SEQ/add_126/U1_50    | CI v -> CO v | FA1X1    | 0.134 |   4.250 |    7.644 | 
+     | I_DP/MULT_SEQ/add_126/U1_51    | CI v -> CO v | FA1X1    | 0.133 |   4.383 |    7.777 | 
+     | I_DP/MULT_SEQ/add_126/U1_52    | CI v -> CO v | FA1X1    | 0.134 |   4.517 |    7.911 | 
+     | I_DP/MULT_SEQ/add_126/U1_53    | CI v -> CO v | FA1X1    | 0.134 |   4.652 |    8.046 | 
+     | I_DP/MULT_SEQ/add_126/U1_54    | CI v -> CO v | FA1X1    | 0.134 |   4.786 |    8.180 | 
+     | I_DP/MULT_SEQ/add_126/U1_55    | CI v -> CO v | FA1X1    | 0.137 |   4.923 |    8.317 | 
+     | I_DP/MULT_SEQ/add_126/U1_56    | CI v -> CO v | FA1X1    | 0.136 |   5.058 |    8.453 | 
+     | I_DP/MULT_SEQ/add_126/U1_57    | CI v -> CO v | FA1X1    | 0.136 |   5.195 |    8.589 | 
+     | I_DP/MULT_SEQ/add_126/U1_58    | CI v -> CO v | FA1X1    | 0.135 |   5.330 |    8.724 | 
+     | I_DP/MULT_SEQ/add_126/U1_59    | CI v -> CO v | FA1X1    | 0.134 |   5.464 |    8.858 | 
+     | I_DP/MULT_SEQ/add_126/U1_60    | CI v -> CO v | FA1X1    | 0.134 |   5.597 |    8.992 | 
+     | I_DP/MULT_SEQ/add_126/U1_61    | CI v -> CO v | FA1X1    | 0.135 |   5.732 |    9.126 | 
+     | I_DP/MULT_SEQ/add_126/U1_62    | CI v -> CO v | FA1X1    | 0.138 |   5.870 |    9.264 | 
+     | I_DP/MULT_SEQ/add_126/U1_63    | CI v -> CO v | FA1X1    | 0.137 |   6.007 |    9.401 | 
+     | I_DP/MULT_SEQ/add_126/U1_64    | CI v -> CO v | FA1X1    | 0.135 |   6.142 |    9.536 | 
+     | I_DP/MULT_SEQ/add_126/U1_65    | CI v -> CO v | FA1X1    | 0.122 |   6.264 |    9.658 | 
+     | I_DP/MULT_SEQ/add_126/U1_66    | I3 v -> O v  | XOR3X1   | 0.104 |   6.368 |    9.762 | 
+     | I_DP/MULT_SEQ/U146             | I1 v -> O v  | AN2X1    | 0.091 |   6.459 |    9.853 | 
+     | I_DP/MULT_SEQ/U156             | A1 v -> O v  | AO12X1   | 0.138 |   6.596 |    9.990 | 
+     | I_DP/MULT_SEQ/mres_reg_reg_65_ | D v          | QDFFRBX1 | 0.000 |   6.596 |    9.990 | 
+     +---------------------------------------------------------------------------------------+ 
+
+
+###############################################################
+#  Generated by:      Cadence Encounter 14.14-s028_1
+#  OS:                Linux x86_64(Host ID ieledasrv2.epfl.ch)
+#  Generated on:      Wed Nov 29 22:58:54 2017
+#  Design:            alu32top
+#  Gate count after P&R              
+###############################################################
+Gate area 2.3520 um^2
+Level 0 Module alu32top    Gates=      9625 Cells=    1143 Area=   22638.5 um^2
+
+
